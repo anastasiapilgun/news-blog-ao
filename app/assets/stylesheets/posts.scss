@@ -1,3 +1,24 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.post-item{
+   margin:70px 0;
+   img{
+     float:left;
+     margin:0 35px 0 0;
+   }
+   a{
+     h3{
+       text-decoration: none;
+       color: purple;
+     }
+     &:hover{
+       text-decoration: none;
+     }
+   }
+   clear:both;
+   p{
+     color: white;
+
+   }
+ }

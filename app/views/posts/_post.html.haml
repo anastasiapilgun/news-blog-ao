@@ -1,0 +1,9 @@
+.post-item
+  = link_to post do
+    %h3= post.title
+  - if post.image
+    = image_tag post.image.source.url, width: 200, class: 'img-rounded'
+  = truncate_html post.content.html_safe, length: 400
+  = social_share_button_tag(post.title)
+  - if can? :update, post
+    = link_to 'Edit', [:edit, :admin, post]

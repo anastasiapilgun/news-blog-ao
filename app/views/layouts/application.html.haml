@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title NewsBlogAo
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .container
+      .header.row
+        .logo.col-md-6
+          %h1
+            = link_to root_path do
+              News
+              %span Blog
+        .profile.text-right.col-md-6
+          - if user_signed_in?
+            - if current_user && current_user.admin?
+              = link_to 'Admin panel', [:admin, :posts]
+            = link_to current_user.email, edit_user_registration_path
+            ,
+            = link_to 'Log out', destroy_user_session_path, method: :delete
+          - else
+            = link_to 'Sign In', '/users/sign_in'
+      - if notice
+        .alert.alert-success= notice
+      - if alert
+        .alert.alert-warning= alert
+      = yield

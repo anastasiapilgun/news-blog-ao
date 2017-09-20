@@ -1,0 +1,40 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "posts";
+@import "social-share-button";
+
+html body {
+  background: black;//url('background0.jpg');
+}
+
+.header{
+  .logo{
+    h1{
+      a{
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-decoration-color: white;
+        font-size: 24px;
+        color: red;
+        font-weight: 400;
+        span {
+          font-weight: 100;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+h2{
+  text-align: center;
+  font-size: 24px;
+}
+
+.links{
+  margin-top: 15px;
+}
+
+.profile{
+  margin:50px 0 30px 0;
+}
