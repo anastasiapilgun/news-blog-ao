@@ -4,7 +4,7 @@
 @import "social-share-button";
 
 html body {
-  background: black;//url('background0.jpg');
+  background: white;//url('background0.jpg');
 }
 
 .header{
@@ -13,13 +13,13 @@ html body {
       a{
         text-transform: uppercase;
         text-decoration: underline;
-        text-decoration-color: white;
+        text-decoration-color: black;
         font-size: 24px;
         color: red;
         font-weight: 400;
         span {
           font-weight: 100;
-          color: white;
+          color: black;
         }
       }
     }

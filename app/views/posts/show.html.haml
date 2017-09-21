@@ -1,23 +1,23 @@
-%h3= @post.title
-- if @post.image
-  = image_tag @post.image.source.url, width: 600, class: 'img-rounded'
-= @post.content.html_safe
-%br
-= form_for [@post, @comment] do |f|
-  .form-group
-    = f.label :content
-    = f.text_area :content, class: 'form-control'
-  .form-group
-    = f.submit nil, class: 'btn btn-success'
-%br
-- @post.comments.each do |comment|
-  - next if comment.new_record?
-  .media
-    .media-left
-      %a{:href => "#"}
-        %img.media-object{:alt => "...", width: 100, :src => "https://previews.123rf.com/images/juliarstudio/juliarstudio1512/juliarstudio151200350/49020643-Man-with-glasses-avatar-simple-icon-for-web-and-mobile-devices-Stock-Vector.jpg"}/
-    .media-body
-      %h4.media-heading= comment.user.name || comment.user.email
-      = comment.content
-      - if can? :update, comment
-        = link_to 'Edit', [@post, edit_comment_id: comment.id]
+.post-item
+  %h3= @post.title
+  - if @post.image
+    = image_tag @post.image.source.url, width: 600, class: 'img-rounded'
+  = @post.content.html_safe
+  .comments
+    = form_for [@post, @comment] do |f|
+      .form-group
+        = f.text_area :content, class: 'form-control'
+      .form-group
+        = f.submit nil, class: 'btn btn-success'
+    %br
+    - @post.comments.each do |comment|
+      - next if comment.new_record?
+      .media
+        .media-left
+          %a{:href => "#"}
+            %img.media-object{:alt => "...", width: 100, :src => "https://previews.123rf.com/images/juliarstudio/juliarstudio1512/juliarstudio151200350/49020643-Man-with-glasses-avatar-simple-icon-for-web-and-mobile-devices-Stock-Vector.jpg"}/
+        .media-body
+          %h4.media-heading= comment.user.name || comment.user.email
+          = comment.content
+          - if can? :update, comment
+            = link_to 'Edit', [@post, edit_comment_id: comment.id]

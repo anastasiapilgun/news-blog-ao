@@ -1,11 +1,17 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.post-item{
-   margin:70px 0;
+.post-item {
+  .comments {
+    margin-top: 150px;
+  }
+  h3 {
+    color: purple;
+  }
+   margin: 70px 0;
    img{
-     float:left;
-     margin:0 35px 0 0;
+     float: left;
+     margin: 0 35px 0 0;
    }
    a{
      h3{
@@ -18,7 +24,7 @@
    }
    clear:both;
    p{
-     color: white;
+     color: black;
 
    }
  }
